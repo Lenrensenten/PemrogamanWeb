@@ -22,7 +22,7 @@
     font-size: 20px;
   }
   
-  /* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
+  /*  navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The  value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
   .navbar {
     overflow: hidden;
     background-color: #333;
@@ -113,6 +113,14 @@
     background-image: url('/assets/c50286569d4047bd3f60b5fbcea82eb9_8674075894045129498.png');
     background-position: center;
   }
+
+  .Game{
+    text-align: center;
+    flex: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #333;
+  }
   
   /* Footer */
   .footer {
@@ -126,7 +134,8 @@
   .footer h2{
     color:#ddd
   }
-  
+ 
+
   /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
   @media screen and (max-width: 700px) {
     .row {   
