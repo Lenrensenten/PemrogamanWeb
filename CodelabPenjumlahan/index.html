@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <main>
+        <div class="luar">
+            <div class="Dalam">
+                <h3 style="font-size:x-large;">Penjumlahan</h3>
+                <p>Bilangan pertama</p>
+                <input type="number" name="angka1" id="angka1" placeholder="angka1">
+                <p>Bilangan kedua</p>
+                <input type="number" name="angka2" id="angka2" placeholder="angka2"><br>
+                <button onclick="addNumbers()">Jumlahkan</button>
+                <button onclick="Reset()">Reset</button>
+                <p id="hasil" style="font-weight: bold;"></p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+
+        function addNumbers(){
+            var num1 = parseInt(document.getElementById('angka1').value);
+            var num2 = parseInt(document.getElementById('angka2').value);
+            if(isNaN(num1) || isNaN(num2)){
+                alert('Tidak boleh kosong');
+                return;
+            }
+            var sum = num1 + num2;
+            document.getElementById('hasil').innerHTML = 'Hasil: ' +sum;
+        }
+
+        function Reset() {
+        document.getElementById('angka1').value = '';
+        document.getElementById('angka2').value = '';
+        document.getElementById('hasil').innerText = '';
+        }
+
+    </script>
+    
+</body>
+</html>

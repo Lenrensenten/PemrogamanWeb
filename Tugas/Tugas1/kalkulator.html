@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="calculator">
+        <div class="display">
+          <div id="expression"></div>
+          <div id="output">0</div>
+        </div>
+        <div class="buttons">
+          <button class="btn" onclick="playSound(); operate('modulo')">%</button>
+          <button class="btn" onclick="playSound(); clearScreen()">AC</button>
+          <button class="btn" onclick="playSound(); operate('divide')">÷</button>
+          <button class="btn" onclick="playSound(); operate('power')">^</button>
+          <button class="btn" onclick="playSound(); insert('7')">7</button>
+          <button class="btn" onclick="playSound(); insert('8')">8</button>
+          <button class="btn" onclick="playSound(); insert('9')">9</button>
+          <button class="btn" onclick="playSound(); operate('multiply')">×</button>
+          <button class="btn" onclick="playSound(); insert('4')">4</button>
+          <button class="btn" onclick="playSound(); insert('5')">5</button>
+          <button class="btn" onclick="playSound(); insert('6')">6</button>
+          <button class="btn" onclick="playSound(); operate('subtract')">−</button>
+          <button class="btn" onclick="playSound(); insert('1')">1</button>
+          <button class="btn" onclick="playSound(); insert('2')">2</button>
+          <button class="btn" onclick="playSound(); insert('3')">3</button>
+          <button class="btn" onclick="playSound(); operate('add')">+</button>
+          <button class="btn" onclick="playSound(); operate('negate')">+/-</button>
+          <button class="btn" onclick="playSound(); insert('0')">0</button>
+          <button class="btn" onclick="playSound(); insert('.')">.</button>
+          <button class="btn" onclick="playSound(); calculate()">=</button>
+        </div>
+      </div>
+
+    <!-- Elemen audio untuk efek suara -->
+    <audio id="clickSound">
+        <source src="buttonsfx.wav" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        let currentInput = "0";
+        let operator = null;
+        let previousInput = null;
+        let expression = "";  // Menyimpan ekspresi yang akan ditampilkan
+
+        function insert(num) {
+          if (currentInput === "0") {
+            currentInput = num;
+          } else {
+            currentInput += num;
+          }
+          expression += num;  // Tambahkan input ke ekspresi
+          updateScreen();
+        }
+
+        function clearScreen() {
+          expression = "";  // Reset ekspresi saat layar dibersihkan
+          currentInput = "0";
+          operator = null;
+          previousInput = null;
+          updateScreen();
+        }
+
+        function updateScreen() {
+          document.getElementById("output").innerText = currentInput;
+          document.getElementById("expression").innerText = expression;  // Perbarui ekspresi di layar
+        }
+
+        function operate(op) {
+          let operatorSymbol;
+          switch(op) {
+            case 'add':
+              operatorSymbol = '+';
+              break;
+            case 'subtract':
+              operatorSymbol = '−';
+              break;
+            case 'multiply':
+              operatorSymbol = '×';
+              break;
+            case 'divide':
+              operatorSymbol = '÷';
+              break;
+            case 'modulo':
+              operatorSymbol = '%';
+              break;
+            case 'power':
+              operatorSymbol = '^';
+              break;
+            case 'negate':
+              currentInput = (parseFloat(currentInput) * -1).toString();
+              updateScreen();
+              return;
+          }
+
+          if (previousInput === null) {
+            previousInput = currentInput;
+            operator = op;
+            currentInput = "0";
+          } else {
+            calculate();
+            operator = op;
+            previousInput = currentInput;
+            currentInput = "0";
+          }
+
+          expression += " " + operatorSymbol + " ";  // Tambahkan operator ke ekspresi
+          updateScreen();
+        }
+
+        function calculate() {
+          if (operator === null || previousInput === null) return;
+
+          let result;
+          const prev = parseFloat(previousInput);
+          const current = parseFloat(currentInput);
+
+          switch (operator) {
+            case "add":
+              result = prev + current;
+              break;
+            case "subtract":
+              result = prev - current;
+              break;
+            case "multiply":
+              result = prev * current;
+              break;
+            case "divide":
+              result = prev / current;
+              break;
+            case "modulo":
+              result = prev % current;
+              break;
+            case "power":
+              result = prev ** current;
+              break;
+          }
+
+          currentInput = result.toString();
+          expression = result.toString();  
+          operator = null;
+          previousInput = null;
+          updateScreen();
+        }
+
+        
+        function playSound() {
+        const sound = document.getElementById("clickSound");
+
+        sound.currentTime = 0;
+        sound.play();
+
+        
+        setTimeout(() => {
+            sound.pause();
+            sound.currentTime = 0; 
+        }, 1000); 
+    }
+
+    </script>
+
+</body>
+</html>
