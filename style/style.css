@@ -1,0 +1,172 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    color: #fff;
+    overflow-x: hidden;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.8);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  
+  .navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #5dc3d3;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  .navbar ul li {
+    margin: 0 1rem;
+  }
+  
+  .navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar ul li a:hover {
+    color: #5dc3d3;
+  }
+  
+  main{
+    padding: 20px;
+    overflow: auto;
+  
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  /* Hero Section */
+  .hero {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+    color: #fff;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+  }
+  
+  /*About card, contact*/
+  .card{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius:  5px;
+    padding: 20px;
+  }
+  
+  input,
+  textarea {
+    padding: 0.8rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .btn-submit {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    background: #4ca1af;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  aside{
+    flex: 2;
+  }
+  
+  /* Section Container */
+  .section-container {
+    padding: 2rem;
+  }
+  
+  .section-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #f39c12;
+  }
+  
+  /* Games List */
+  .games{
+    flex: 5;
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  
+  .games-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+  
+  .game-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .game-item h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    color: #f39c12;
+  }
+  
+  .game-item p {
+    font-size: 1rem;
+    color: #eee;
+  }
+  
+  .game-item:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: rgba(0, 0, 0, 0.8);
+    font-size: 0.9rem;
+  }
+  

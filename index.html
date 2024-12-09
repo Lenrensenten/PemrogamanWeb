@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fansite Game</title>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Game Fansite</div>
+            <ul class="nav-links">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#games">Games</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav> 
+          <section class="hero">
+            <h1>Game Fansite</h1>
+            <p>Website Prototype untuk latihan</p>
+          </section>
+    </header>
+  
+  <main>
+    <aside>
+        <article class="about card">
+            <section class="content-section">
+                <h2>About Us</h2>
+                <p>Website ini terbentuk karena adminnya wibu dan gamer yang ingin punya website sendiri untuk dijadikan tempat pelampiasan.</p>
+            </section>
+        </article>
+        <article class="Contact card">
+            <section class="content-section">
+                <h2>Contact Us</h2>
+                <form id="contactForm" method="POST">
+                    <div class="form-group">
+                      <label for="name">Name:</label><br>
+                      <input type="text" id="name" placeholder="Enter your name" required name="name">
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Email:</label><br>
+                      <input type="email" id="email" placeholder="Enter your email" required name="email">
+                    </div>
+                    <div class="form-group">
+                      <label for="message">Message:</label><br>
+                      <textarea id="message" placeholder="Write your message" required name="message"></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Send</button>
+                  </form>
+              </section>
+              <div id="notification"></div>
+        </article>
+        <article class="comments card">
+            <section class="content-section">
+                <h2>User Comments</h2>
+                <div class="comments-list">
+                    <!-- Comments will be populated by JavaScript -->
+                </div>
+            </section>
+        </article>
+    </aside>
+
+    <div class="games card">
+        <section class="content-section">
+            <h2>Popular Games</h2>
+            <div class="games-list">
+              <!-- List of Games Populated by JavaScript -->
+            </div>
+        </section>
+        <section class="content-section">
+            <h2>Artikel</h2>
+            <div class="game-articles">
+                <article>
+                    <h3>Pou</h3>
+                    <p>Game legend yang pernah menjadi simbol kebahagiaan sederhana di era smartphone awal. Pou adalah game simulasi di mana pemain merawat makhluk lucu bernama Pou dengan gameplay sederhana yang tetap menyenangkan.</p>
+                </article>
+                <article>
+                    <h3>Genshin Impact</h3>
+                    <p>Game wibu yang menawarkan dunia terbuka dengan visual memukau. Cocok untuk para pemain yang menyukai petualangan epik dan karakter anime yang unik.</p>
+                </article>
+                <article>
+                    <h3>Arknights</h3>
+                    <p>Game tower defense dengan strategi mendalam dan karya seni yang luar biasa. Setiap karakter memiliki desain unik yang tak pernah mengecewakan.</p>
+                </article>
+                <article>
+                    <h3>Monster Hunter</h3>
+                    <p>Game yang menantang pemain untuk berburu monster besar dan grinding tanpa henti. Cocok bagi mereka yang menikmati tantangan.</p>
+                </article>
+                <article>
+                    <h3>Wuthering Waves</h3>
+                    <p>Game aksi dengan dunia yang kaya dan konten melimpah. Cocok untuk pemain yang menyukai eksplorasi dan pengalaman intens.</p>
+                </article>
+            </div>
+        </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Game Fansite. All rights reserved.</p>
+  </footer>
+
+  <script src="/script/script.js"></script>
+</body>
+</html>
